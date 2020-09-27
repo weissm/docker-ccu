@@ -1,13 +1,13 @@
 FROM python as builder
 
 #CCU firmware version to download
-ARG CCU_VERSION="3.49.17"
+ARG CCU_VERSION="3.53.30"
 
 #CCU Serial Number
 ARG CCU_SERIAL="NEQ1234567"
 
 #QEMU version (allows running build and CCU on x86)
-ARG QEMU_VERSION="v3.0.0"
+ARG QEMU_VERSION="v4.0.0"
 
 RUN export CCU_FW_LINK="http://update.homematic.com/firmware/download?cmd=download&version=${CCU_VERSION}&serial=${CCU_SERIAL}&lang=de&product=HM-CCU${CCU_VERSION%%.*}" \
     && echo "Downloading from $CCU_FW_LINK " \
